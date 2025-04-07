@@ -25,8 +25,16 @@ TX_ADDRESS = b"\xe1\xf0\xf0\xf0\xf0"  # Dirección del transmisor
 RX_ADDRESS = b"\xd2\xf0\xf0\xf0\xf0"  # Dirección del receptor
 CANAL_RF = 46                         # Canal de transmisión (0-125)
 DATA_RATE = 2                         # 2 Mbps
+# Valores válidos:
+# 2 Mbps → más rápida, menor alcance
+# 1 Mbps → equilibrado
+# 250 Kbps → más lento, mayor alcance y fiabilidad
 RF_POWER = 3                          # Potencia máxima
-
+# Valores válidos para RF_POWER:
+# 0 = -18 dBm (mínima potencia, bajo consumo)
+# 1 = -12 dBm
+# 2 =  -6 dBm
+# 3 =   0 dBm (máxima potencia)
 # --- Clase para manejar la conexión WiFi ---
 class WiFiManager:
     def __init__(self, ssid, password):
